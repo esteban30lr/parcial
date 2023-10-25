@@ -7,11 +7,21 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   constructor(public api:HttpClient) {   }
-  Url="https://localhost:7027/api/"
+  Url="https://localhost:7090/api/"
   
   public async GetData (endpoint: String){
+    var response;
     await this.api.get(this.Url+endpoint).toPromise().then((res =>{
-      console.log(res);
+      response = res;
     }))
+    return response;
+  }
+
+  public async PostData (endpoint: String, body: any){
+    var response;
+    await this.api.post(this.Url+endpoint, body).toPromise().then((res =>{
+      response = res;
+    }))
+    return response
   }
 }

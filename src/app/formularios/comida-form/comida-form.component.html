@@ -1,0 +1,58 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Registro Comida</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Año expedicion" formControlName="añoExpedicion">
+            <mat-error *ngIf="addressForm.controls['añoExpedicion'].hasError('required')">
+            Año expedicion es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Especie comida" formControlName="especieComida">
+            <mat-error *ngIf="addressForm.controls['especieComida'].hasError('required')">
+              Especie comida es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Marca comida" formControlName="marcaComida">
+            <mat-error *ngIf="addressForm.controls['marcaComida'].hasError('required')">
+              Marca comida es<strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Precio comida" formControlName="precioComida">
+            <mat-error *ngIf="addressForm.controls['precioComida'].hasError('required')">
+              Precio comida es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ref Comida" formControlName="referenciaComida">
+            <mat-error *ngIf="addressForm.controls['referenciaComida'].hasError('required')">
+              Ref Comida es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
